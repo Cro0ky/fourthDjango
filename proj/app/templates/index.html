@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% include 'header.html'%}
+
+    {% for client in clients%}
+        <p>{{ client.id }} {{ client.name }} {{ client.lang }}  </p>
+    {% endfor %}
+
+    <h1>{{ header }}</h1>
+    <p>Привет {{ user.name }}</p>
+    <p>Твой возраст - {{ user.age }}</p>
+    <p>Адрес - ул.{{ address.0 }} д.{{ address.1 }} кв.{{ address.2 }}</p>
+
+    {% autoescape off %}
+        {{ text }}
+    {% endautoescape %}
+
+    <p style="background: #000; color: #fff; font-size: 40px; padding: 10px">Языки прогрм</p>
+    {%for lang in langs%}
+        <p style="background: grey; color:#fff; padding: 5px">{{ lang }}</p>
+    {% endfor %}
+
+</body>
+</html>
